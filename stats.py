@@ -18,3 +18,9 @@ def count_letters(book):
                 letters_dit[l] =1
     return letters_dit
 
+def alpha_only(dict):
+    alpha_dict = {}
+    for a in dict:
+        if a.isalpha():
+            alpha_dict[a]=dict[a] 
+    return alpha_dict

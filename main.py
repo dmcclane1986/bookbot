@@ -1,5 +1,6 @@
 from stats import count_words
 from stats import count_letters
+from stats import alpha_only
 
 def get_book_text(filepath):
     file_contents= None
@@ -14,10 +15,10 @@ def main():
     word_count = count_words(book)
     
 
-    print(f"{word_count} words found in the document")
+   # print(f"{word_count} words found in the document")
     letter_count = count_letters(book)
-    
-    sorted_dit = dict(sorted(letter_count.items(), key=lambda item: item[1] , reverse=True))
+    alpha_dict =alpha_only(letter_count)
+    sorted_dit = dict(sorted(alpha_dict.items(), key=lambda item: item[1] , reverse=True))
     print(sorted_dit)
 
 

@@ -9,11 +9,16 @@ def get_book_text(filepath):
 
 
 def main():
-    book = get_book_text("books/frankenstein.txt")
+    book_location = "books/frankenstein.txt"
+    book = get_book_text(book_location)
     word_count = count_words(book)
+    
+
     print(f"{word_count} words found in the document")
     letter_count = count_letters(book)
-    print(letter_count)
+    
+    sorted_dit = dict(sorted(letter_count.items(), key=lambda item: item[1] , reverse=True))
+    print(sorted_dit)
 
 
 

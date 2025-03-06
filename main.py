@@ -1,6 +1,7 @@
 from stats import count_words
 from stats import count_letters
 from stats import alpha_only
+import sys
 
 
 def get_book_text(filepath):
@@ -11,7 +12,10 @@ def get_book_text(filepath):
 
 
 def main():
-    book_location = "books/frankenstein.txt"
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    book_location = sys.argv[1]
     book = get_book_text(book_location)
     word_count = count_words(book)
     
